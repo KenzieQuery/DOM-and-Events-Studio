@@ -9,7 +9,8 @@ window.addEventListener("load", function(){
     let upButton = document.getElementById("up");
     let downButton = document.getElementById("down");
     let rightButton = document.getElementById("right");
-    let leftButton = document.getElementById(("left"))
+    let leftButton = document.getElementById(("left"));
+    let rocketImage = document.getElementById("")
 
     //html elements we are effecting with our buttons
     let flightStatus = document.getElementById("flightStatus");
@@ -41,16 +42,30 @@ window.addEventListener("load", function(){
         }
     })
 
-
 // The rocket image should move 10 px in the direction of the button that was clicked.
-
 // If the "Up" or "Down" buttons were clicked, then the shuttle height should increase or decrease by 10,000 miles.
+    
     upButton.addEventListener("click", function (){
         let shuttleHeightNumber = Number(spaceShuttleHeight.innerHTML);
         spaceShuttleHeight.innerHTML = shuttleHeightNumber + 10000; 
+        let bottomPosition = rocketImage.style.bottom;
+        let bottomPositionNumber = parseInt(bottomPosition);
+        let movement = bottomPositionNumber + 10 + 'px';
+        // assign this style.bottom protperty to a string ie. "10px"
+        rocketImage.style.bottom = movement;
     })
+
     downButton.addEventListener("click", function (){
         let shuttleHeightNumber = Number(spaceShuttleHeight.innerHTML);
         spaceShuttleHeight.innerHTML = shuttleHeightNumber - 10000; 
     })
+
+    // upButton.addEventListener("")
+    // downButton.addEventListener("")
+    // rightButton.addEventListener("")
+    // leftButton.addEventListener("")
+
 })
+
+
+
